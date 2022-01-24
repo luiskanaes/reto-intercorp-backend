@@ -14,26 +14,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("api/clientes")
 public class ClienteController {
-    
+
     @Autowired
     ClienteService service;
-    
-    
-    @PostMapping(path = "/crea",produces = "application/json", consumes = "application/json")
-    public ResponseEntity<ResponseDTO> creaCliente(@RequestBody Cliente cliente){
+
+
+    @PostMapping(path = "/crea", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<ResponseDTO> creaCliente(@RequestBody Cliente cliente) {
         ResponseDTO response = service.create(cliente);
-        return ResponseEntity.status(response.getStatus()).body(new ResponseDTO<>(response.getData(),response.getMessage(),response.getStatus()));
+        return ResponseEntity.status(response.getStatus()).body(new ResponseDTO<>(response.getData(), response.getMessage(), response.getStatus()));
     }
-    
+
     @GetMapping(path = "/kpi", produces = "application/json")
-    public ResponseEntity<ResponseDTO> kpiClientes(){
+    public ResponseEntity<ResponseDTO> kpiClientes() {
         ResponseDTO response = service.kpi();
-        return ResponseEntity.status(response.getStatus()).body(new ResponseDTO<>(response.getData(),response.getMessage(),response.getStatus()));
+        return ResponseEntity.status(response.getStatus()).body(new ResponseDTO<>(response.getData(), response.getMessage(), response.getStatus()));
     }
-    
+
     @GetMapping(path = "/list", produces = "application/json")
-    public ResponseEntity<ResponseDTO> list(){
+    public ResponseEntity<ResponseDTO> list() {
         ResponseDTO response = service.list();
-        return ResponseEntity.status(response.getStatus()).body(new ResponseDTO<>(response.getData(),response.getMessage(),response.getStatus()));
+        return ResponseEntity.status(response.getStatus()).body(new ResponseDTO<>(response.getData(), response.getMessage(), response.getStatus()));
     }
 }
