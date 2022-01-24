@@ -1,0 +1,10 @@
+com\client\example\entity\Cliente.class
+com\client\example\ExampleApplication.class
+com\client\example\repository\ClienteRepository.class
+com\client\example\dto\KpiClientesDTO.class
+com\client\example\config\SwaggerConfig.class
+com\client\example\dto\ResponseDTO.class
+com\client\example\controller\ClienteController.class
+com\client\example\dto\ListClientesDTO.class
+com\client\example\component\RequestTimeInterceptor.class
+com\client\example\service\ClienteService.class
